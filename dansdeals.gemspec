@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Displays the first 5 deals from dansdeals.com.}
   spec.description   = %q{Displays the first 5 deals from dansdeals.com as well as giving more info about each one..}
-  spec.homepage      = "yechiel.me"
+  spec.homepage      = "https://github.com/achasveachas/dansdeals"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
