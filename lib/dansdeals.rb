@@ -1,5 +1,2 @@
-require "dansdeals/version"
-
-module DansDeals
-  # Your code goes here...
-end
+require_relative "./dansdeals/version"
+require_relative "./dansdeals/cli"
