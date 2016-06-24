@@ -12,7 +12,8 @@ class DansDeals::Deals
     doc.css(".post").each do |post|
       deal = {
         :post_title => post.css(".posttitle").text,
-        :post_body => post.css(".entry").inner_text
+        :post_body => post.css(".entry").inner_text,
+        :post_url => post.css(".posttitle a").attribute("href").value
       }
       deals << deal
     end

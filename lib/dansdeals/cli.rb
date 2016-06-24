@@ -21,6 +21,7 @@ class DansDeals::CLI
       if input.to_i.between?(1, @deal.length)
         puts @deal[input.to_i - 1][:post_title]
         puts @deal[input.to_i - 1][:post_body]
+        puts "For more info visit #{@deal[input.to_i - 1][:post_url]}"
       elsif input.to_i > @deal.length
         puts "Sorry, there is no such deal."
       elsif input == "list"
