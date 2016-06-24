@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yechiel Kalmenson"]
   spec.email         = ["chilikkal@gmail.com"]
 
-  spec.summary       = %q{Displays the first 5 deals from dansdeals.com.}
-  spec.description   = %q{Displays the first 5 deals from dansdeals.com as well as giving more info about each one..}
+  spec.summary       = %q{Scrapes deals from dansdeals.com.}
+  spec.description   = %q{Displays deals from dansdeals.com, 5 at a time,  and gives info about each one..}
   spec.homepage      = "https://github.com/achasveachas/dansdeals"
   spec.license       = "MIT"
 

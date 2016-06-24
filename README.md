@@ -1,8 +1,8 @@
-# Dansdeals
+# DansDeals
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dansdeals`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to my DansDeals gem.
 
-TODO: Delete this and the text above, and describe your gem
+This gem scrapes dansdeals.com for new deals and prints the deal information to the console.
 
 ## Installation
 
@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run the gem and the program will print the first 5 deals from the dansdeals.com homepage.
+You can then type the number of the deal you want to read more about and the terminal will display the full text of the deal.
+You can also type "List" to display the list of deals again, "Next" to see the next 5 deals, and "Previous" to go back to the last 5 deals.
+When you are done type "Exit" to leave the program.
 
 ## Development
 
@@ -32,10 +35,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dansdeals. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/achasveachas/dansdeals or by email to achasveachas@gmail.com. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
