@@ -1,7 +1,7 @@
 class DansDeals::Deals
 
   def self.latest
-    self.scrape_deals.first(5)
+    self.scrape_deals
   end
 
   def self.scrape_deals
