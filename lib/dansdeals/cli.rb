@@ -10,7 +10,10 @@ class DansDeals::CLI
     puts "Todays Deals:"
     deal = DansDeals::Deals.latest
     @list = deal[((@counter * 5) - 5)..(@counter * 5) -1].collect {|deal| deal}
-
+    if @list.empty?
+      puts "That's all the deals for today."
+      @counter -= 1
+    end
     @list.each.with_index(1) do |deal, i|
       puts "#{i}. #{deal[:post_title]}"
     end
@@ -21,7 +24,7 @@ class DansDeals::CLI
     while input != "exit"
       puts "Enter the number of the deal you want more info on. You can also type \"list\" to see the deals again, \"next\" to see the next 5 deals, or \"previous\" to see the last 5 deals. Type \"exit\" to leave:"
       input = gets.strip.downcase
-      case 
+      case
       when input.to_i.between?(1, 5)
         puts @list[input.to_i - 1][:post_title]
         puts @list[input.to_i - 1][:post_body]
