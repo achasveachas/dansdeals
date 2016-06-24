@@ -27,8 +27,11 @@ class DansDeals::CLI
         puts "Sorry, there is no such deal."
       elsif input == "list"
         list_deals
-      elsif input == "more"
+      elsif input == "next"
         @counter += 1
+        list_deals
+      elsif input == "previous"
+        @counter > 1 ? @counter -= 1 : puts("You are at the beginning of the list.")
         list_deals
       elsif input == "exit"
       else
