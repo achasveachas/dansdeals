@@ -1,7 +1,7 @@
 class DansDeals::Deals
-  attr_accessor :headline, :url
+
   def self.latest
-    self.scrape_deals
+    self.scrape_deals.first(5)
   end
 
   def self.scrape_deals
@@ -16,7 +16,6 @@ class DansDeals::Deals
       }
       deals << deal
     end
-    binding.pry
     deals
   end
 end
