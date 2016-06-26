@@ -7,7 +7,7 @@ class DansDeals::CLI
   end
 
   def list_deals
-    puts "Todays Deals:"
+    puts "\nTodays Deals:"
     deal = DansDeals::Deals.latest
     @list = deal[((@counter * 5) - 5)..(@counter * 5) -1].collect {|deal| deal}
     if @list.empty?
@@ -15,22 +15,22 @@ class DansDeals::CLI
       @counter -= 1
     end
     @list.each.with_index(1) do |deal, i|
-      puts "#{i}. #{deal[:post_title]}"
+      puts "\n#{i}. #{deal[:post_title]}"
     end
   end
 
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the deal you want more info on. You can also type \"list\" to see the deals again, \"next\" to see the next 5 deals, or \"previous\" to see the last 5 deals. Type \"exit\" to leave:"
+      puts "\nEnter the number of the deal you want more info on. \nYou can also type \"list\" to see the deals again, \"next\" to see the next 5 deals, or \"previous\" to see the last 5 deals. Type \"exit\" to leave:"
       input = gets.strip.downcase
       case
       when input.to_i.between?(1, 5)
         puts @list[input.to_i - 1][:post_title]
-        puts @list[input.to_i - 1][:post_body]
-        puts "For more info visit #{@list[input.to_i - 1][:post_url]}"
+        puts @list[input.to_i - 1][:post_body].strip
+        puts "\nFor more info visit #{@list[input.to_i - 1][:post_url]}"
       when input.to_i > 5
-        puts "Sorry, there is no such deal."
+        puts "\nSorry, there is no such deal."
       when input == "list"
         list_deals
       when input == "next"
@@ -47,6 +47,6 @@ class DansDeals::CLI
   end
 
   def goodbye
-    puts "Thanks for stopping by, see you soon!"
+    puts "\nThanks for stopping by, see you soon!"
   end
 end
