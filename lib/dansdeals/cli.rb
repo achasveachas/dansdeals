@@ -26,9 +26,9 @@ class DansDeals::CLI
       input = gets.strip.downcase
       case
       when input.to_i.between?(1, 5)
-        puts @list[input.to_i - 1][:post_title]
-        puts @list[input.to_i - 1][:post_body].strip
-        puts "\nFor more info visit #{@list[input.to_i - 1][:post_url]}"
+        puts @list[input.to_i - 1].title
+        puts @list[input.to_i - 1].body
+        puts "\nFor more info visit #{@list[input.to_i - 1].url}"
       when input.to_i > 5
         puts "\nSorry, there is no such deal."
       when input == "list"
