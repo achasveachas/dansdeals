@@ -15,7 +15,7 @@ class DansDeals::CLI
       @counter -= 1
     end
     @list.each.with_index(1) do |deal, i|
-      puts "\n#{i}. #{deal[:post_title]}"
+      puts "\n#{i}. #{deal.title}"
     end
   end
 
