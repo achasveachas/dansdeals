@@ -27,6 +27,8 @@ You can then type the number of the deal you want to read more about and the ter
 You can also type "List" to display the list of deals again, "Next" to see the next 5 deals, and "Previous" to go back to the last 5 deals.
 When you are done type "Exit" to leave the program.
 
+You can watch a video walkthrough here: http://d.pr/v/XeKL
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
