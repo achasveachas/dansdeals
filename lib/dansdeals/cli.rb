@@ -21,15 +21,15 @@ class DansDeals::CLI
 
   def menu
     input = nil
-    while input != "exit"
+    loop do
       puts "\nEnter the number of the deal you want more info on. \nYou can also type \"list\" to see the deals again, \"next\" to see the next 5 deals, or \"previous\" to see the last 5 deals. Type \"exit\" to leave:"
       input = gets.strip.downcase
       case
-      when input.to_i.between?(1, 5)
+      when input.to_i.between?(1, @list.length)
         puts @list[input.to_i - 1].title
         puts @list[input.to_i - 1].body
         puts "\nFor more info visit #{@list[input.to_i - 1].url}"
-      when input.to_i > 5
+      when input.to_i > @list.length
         puts "\nSorry, there is no such deal."
       when input == "list"
         list_deals
@@ -40,6 +40,7 @@ class DansDeals::CLI
         @counter > 1 ? @counter -= 1 : puts("You are at the beginning of the list.")
         list_deals
       when input == "exit"
+        break
       else
         puts "Sorry, I didn't get that."
       end

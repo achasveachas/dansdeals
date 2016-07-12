@@ -5,18 +5,16 @@ class DansDeals::Deals
   end
 
   def self.scrape_deals
-    deals = []
 
     doc = Nokogiri::HTML(open("http://www.dansdeals.com"))
 
-    doc.css(".post").each do |post|
+    doc.css(".post").collect do |post|
       deal = self.new
       deal.title = post.css(".posttitle").text
       deal.body = post.css(".entry").inner_text.strip
       deal.url = post.css(".posttitle a").attribute("href").value
 
-      deals << deal
+      deal
     end
-    deals
   end
 end
