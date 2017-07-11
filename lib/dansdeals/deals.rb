@@ -8,11 +8,11 @@ class DansDeals::Deals
 
     doc = Nokogiri::HTML(open("http://www.dansdeals.com"))
 
-    doc.css(".post").collect do |post|
+    doc.css(".td_module_10").collect do |post|
       deal = self.new
-      deal.title = post.css(".posttitle").text
-      deal.body = post.css(".entry").inner_text.strip
-      deal.url = post.css(".posttitle a").attribute("href").value
+      deal.title = post.css("h3.entry-title").text
+      deal.body = post.css(".td-excerpt").first.inner_text.strip
+      deal.url = post.css("h3 a").attribute("href").value
 
       deal
     end
